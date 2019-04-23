@@ -4,6 +4,8 @@ import numpy as np
 from PIL import Image
 from random import choice
 from skimage.measure import compare_psnr, compare_ssim
+import plaidml.keras as keras
+keras.install_backend()
 from keras.models import load_model
 from keras.utils import Sequence
 
@@ -391,12 +393,12 @@ def plot_bigger_images(model, loader, datapath_test, test_output, epoch, name='S
                 }
                 plt.imsave(os.path.join(test_output, "{}_out.png".format(filename)), img_sr)
                 # Plot the images. Note: rescaling and using squeeze since we are getting batches of size 1
-                fig, axes = plt.subplots(1, 3, figsize=(30, 10))
-                for i, (title, img) in enumerate(images.items()):
-                    axes[i].imshow(img)
-                    axes[i].set_title("{} - {}".format(title, img.shape))
-                    axes[i].axis('off')
-                plt.suptitle('{}'.format(filename))
+#                fig, axes = plt.subplots(1, 3, figsize=(30, 10))
+#                for i, (title, img) in enumerate(images.items()):
+#                    axes[i].imshow(img)
+#                    axes[i].set_title("{} - {}".format(title, img.shape))
+#                    axes[i].axis('off')
+#                plt.suptitle('{}'.format(filename))
 
                 # Save directory
                 savefile = os.path.join(test_output, "{}.png".format(filename))
@@ -420,12 +422,12 @@ def plot_bigger_images(model, loader, datapath_test, test_output, epoch, name='S
 
                 plt.imsave(os.path.join(test_output, "{}_out.png".format(filename)), img_sr)
                 # Plot the images. Note: rescaling and using squeeze since we are getting batches of size 1
-                fig, axes = plt.subplots(1, 4, figsize=(40, 10))
-                for i, (title, img) in enumerate(images.items()):
-                    axes[i].imshow(img)
-                    axes[i].set_title("{} - {}".format(title, img.shape))
-                    axes[i].axis('off')
-                plt.suptitle('{}'.format(filename))
+#                fig, axes = plt.subplots(1, 4, figsize=(40, 10))
+#                for i, (title, img) in enumerate(images.items()):
+#                    axes[i].imshow(img)
+#                    axes[i].set_title("{} - {}".format(title, img.shape))
+#                    axes[i].axis('off')
+#                plt.suptitle('{}'.format(filename))
 
                 # Save directory
                 savefile = os.path.join(test_output, "{}.png".format(filename))

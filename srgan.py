@@ -10,6 +10,8 @@ import numpy as np
 stderr = sys.stderr
 sys.stderr = open(os.devnull, 'w')
 import tensorflow as tf
+import plaidml.keras as keras
+keras.install_backend()
 from keras.models import Sequential, Model
 from keras.layers import Input, Activation, Add
 from keras.layers import BatchNormalization, LeakyReLU, PReLU, Conv2D, Dense

@@ -11,7 +11,8 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-
+import plaidml.keras as keras
+keras.install_backend()
 from keras.utils import data_utils as keras_utils
 from keras import layers, models, backend
 from keras_applications import get_submodules_from_kwargs

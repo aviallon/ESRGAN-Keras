@@ -508,7 +508,7 @@ class SRGAN():
         log_weight_frequency=1000,
         log_weight_path='./data/weights/',
         log_tensorboard_path='./data/logs/',
-        log_tensorboard_name='SRGAN',
+        log_tensorboard_name='ESRGAN',
         log_tensorboard_update_freq=500,
         log_test_frequency=500,
         log_test_path="./images/samples/",
@@ -681,7 +681,7 @@ class SRGAN():
         if len(model_name)>27:
             e = int(model_name[24:-3])
             print(e)
-        plot_bigger_images(self, loader, datapath_test, log_test_path, e, refer_model=refer_model)
+        plot_bigger_images(self, loader, datapath_test, log_test_path, e, name='ESRGAN', refer_model=refer_model)
 
 
 # Run the SRGAN network
