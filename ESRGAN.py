@@ -1,5 +1,6 @@
-#! /usr/bin/python
-# ! /usr/bin/python
+#! /usr/bin/python2
+# -*- coding: utf-8 -*-
+
 import os
 import sys
 import pickle
@@ -11,6 +12,8 @@ import numpy as np
 stderr = sys.stderr
 sys.stderr = open(os.devnull, 'w')
 import tensorflow as tf
+import plaidml.keras as keras
+keras.install_backend()
 from keras.models import Sequential, Model, load_model
 from keras.layers import Input, Activation, Add, Concatenate, Multiply
 from keras.layers import BatchNormalization, LeakyReLU, PReLU, Conv2D, Dense
